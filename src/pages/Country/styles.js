@@ -5,9 +5,9 @@ export const Container = styled.div`
   max-width: 1280px;
   margin: auto;
 
-	@media (max-width: 375px){
-		padding-bottom: 72px;
-	}
+  @media (max-width: 375px) {
+    padding-bottom: 72px;
+  }
 `;
 
 export const ButtonBack = styled.button`
@@ -21,7 +21,7 @@ export const ButtonBack = styled.button`
   border: 0;
   color: ${({ theme }) => theme.colors.text};
   background-color: ${({ theme }) => theme.colors.backgroundHeader};
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 `;
 
 export const CountryWrapper = styled.section`
@@ -72,12 +72,24 @@ export const CountryDataList = styled.div`
 
 export const BorderCountryContainer = styled.div`
   display: flex;
-
   color: ${({ theme }) => theme.colors.text};
+  flex-wrap: wrap;
+  gap: 8px;
+
+	@media (max-width: 990px){
+		flex-direction: column;
+	}
+
+  p {
+		min-width: 8em;
+		flex: .3;
+  }
+
   ul {
-    margin-left: 8px;
     display: flex;
     gap: 8px;
+		flex: 1;
+    flex-wrap: wrap;
 
     li {
       a {

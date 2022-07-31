@@ -1,12 +1,13 @@
 import { Container, CardData, CountryName, DataList } from "./styles";
 
 import formatNumber from "../../utils/formatNumber";
+import { Link } from "react-router-dom";
 
 function Card({ cardData }) {
   return (
     <Container>
-      <a
-        href={`details/${cardData.cca2}`}
+      <Link
+        to={`country/${cardData.cca2}`}
         title={`Ver mais informações sobre ${cardData.name.common}`}
       >
         <header>
@@ -34,7 +35,7 @@ function Card({ cardData }) {
             </li>
           </DataList>
         </CardData>
-      </a>
+      </Link>
     </Container>
   );
 }
