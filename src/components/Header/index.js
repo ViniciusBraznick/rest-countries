@@ -1,22 +1,21 @@
 import { Container, HeaderContent, ToggleTheme } from "./styles";
 
-import moonIcon from "../../assets/images/moon-icon.svg";
-import sunIcon from "../../assets/images/sun-icon.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header({ currentTheme, onToggleTheme }) {
   return (
     <Container>
       <HeaderContent>
-        <h1>Where in the world?</h1>
+        <a href="/">
+          <h1>Where in the world?</h1>
+        </a>
 
         <ToggleTheme
           onClick={onToggleTheme}
           title={`Toggle theme to ${currentTheme}`}
         >
-          <img
-            src={currentTheme === "light" ? sunIcon : moonIcon}
-            alt="Change theme icon"
-          />
+          <FontAwesomeIcon icon={currentTheme === "light" ? faSun : faMoon} />
           <p>{currentTheme} Mode</p>
         </ToggleTheme>
       </HeaderContent>

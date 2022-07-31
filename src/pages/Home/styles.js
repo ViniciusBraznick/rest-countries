@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.main`
   width: 90%;
   max-width: 1280px;
   margin: auto;
   margin-top: 48px;
+  padding-bottom: 48px;
 `;
 
-export const FilterContainer = styled.div`
+export const FilterContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,6 +30,7 @@ export const InputSearch = styled.div`
     font-size: 1rem;
     color: ${({ theme }) => theme.colors.text};
     background-color: ${({ theme }) => theme.colors.backgroundHeader};
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 
     &::placeholder {
       color: ${({ theme }) => theme.colors.text};
@@ -41,6 +43,7 @@ export const InputSearch = styled.div`
     display: flex;
     justify-content: center;
     cursor: pointer;
+    color: ${({ theme }) => theme.colors.text};
   }
 `;
 
@@ -48,11 +51,17 @@ export const SelectSearch = styled.div`
   flex: 1;
   display: flex;
   justify-content: flex-end;
+
   select {
     width: 100%;
-    max-width: 200px;
     height: 56px;
-    width: 200px;
+    max-width: 200px;
+    border-radius: 4px;
+    border: 0;
+    padding: 0 18px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    color: ${({ theme }) => theme.colors.text};
+    background-color: ${({ theme }) => theme.colors.backgroundHeader};
   }
 `;
 

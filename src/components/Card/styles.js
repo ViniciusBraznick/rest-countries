@@ -6,11 +6,14 @@ export const Container = styled.div`
   border-radius: 6px;
   padding-bottom: 46px;
   background-color: ${({ theme }) => theme.colors.backgroundHeader};
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+
   header {
-    height: 180px;
+    height: 11rem;
 
     img {
       width: 100%;
+      height: 100%;
       border-top-left-radius: 6px;
       border-top-right-radius: 6px;
     }
@@ -18,7 +21,7 @@ export const Container = styled.div`
 `;
 
 export const CardData = styled.div`
-  padding-left: 24px;
+  padding: 0 24px;
 `;
 
 export const CountryName = styled.h2`

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
-  width: 100vw;
+  width: 100%;
   height: 80px;
 	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   background-color: ${({ theme }) => theme.colors.backgroundHeader};
@@ -33,7 +33,7 @@ export const ToggleTheme = styled.button`
   color: ${({ theme }) => theme.colors.text};
   background-color: transparent;
 
-  img {
+  svg {
     width: 18px;
   }
 

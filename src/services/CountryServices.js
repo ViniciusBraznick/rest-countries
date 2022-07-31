@@ -1,7 +1,7 @@
 import HttpClient from "./utils/HttpClient";
 
-import { mockCountry } from "./mocks/countryMock";
-import { detailsCountryMock } from "./mocks/detailsCountryMock";
+//import { mockCountry } from "./mocks/countryMock";
+//import { detailsCountryMock } from "./mocks/detailsCountryMock";
 
 class countryService {
   constructor() {
@@ -9,17 +9,18 @@ class countryService {
   }
 
   async index() {
-    // const countries = await this.httpClient.get("all");
-    // return countries;
+    const countries = await this.httpClient.get("all");
+    return countries;
+  }
 
-		return mockCountry;
+  async getCountryByRegion(region) {
+    const countries = await this.httpClient.get(`region/${region}`);
+    return countries;
   }
 
   async getCountryByCode(code) {
-    // const country = await this.httpClient.get(`alpha?codes=${code}`);
-    // return country;
-
-		return detailsCountryMock
+    const country = await this.httpClient.get(`alpha?codes=${code}`);
+    return country;
   }
 }
 

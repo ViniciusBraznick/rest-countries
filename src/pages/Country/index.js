@@ -13,6 +13,7 @@ import {
   CountryDataList,
   BorderCountryContainer,
 } from "./styles";
+
 import { Link, useParams } from "react-router-dom";
 import Loader from "../../components/Loader";
 
@@ -25,22 +26,24 @@ export default function Country() {
     async function LoadCountry() {
       try {
         setIsLoading(true);
+
         const countriesList = await CountryServices.getCountryByCode(
           countryCode
         );
         setCountry(countriesList);
       } catch (error) {
+        console.log("error", error);
       } finally {
         setIsLoading(false);
       }
     }
+
     LoadCountry();
   }, []);
 
   return (
     <Container>
       <Loader isLoading={isLoading} />
-
       <ButtonBack>
         <FontAwesomeIcon icon={faArrowLeft} />
         Back
@@ -57,19 +60,24 @@ export default function Country() {
             <CountryDataList>
               <ul>
                 <li>
-                  <b>Native Name: </b> {country.name.common}
+                  <b>Native Name: </b>
+                  {Object.values(country.name.nativeName)[0].common}
                 </li>
                 <li>
-                  <b>Population: </b> {country.population}
+                  <b>Population: </b>
+                  {country.population}
                 </li>
                 <li>
-                  <b>Region: </b> {country.region}
+                  <b>Region: </b>
+                  {country.region}
                 </li>
                 <li>
-                  <b>Sub Region: </b> {country.subregion}
+                  <b>Sub Region: </b>
+                  {country.subregion}
                 </li>
                 <li>
-                  <b>Capital: </b> {country.capital}
+                  <b>Capital: </b>
+                  {country.capital}
                 </li>
               </ul>
 
@@ -78,26 +86,30 @@ export default function Country() {
                   <b>Top Level Domain: </b> {country.tld}
                 </li>
                 <li>
-                  <b>Currencies: </b> {country[0]}
+                  <b>Currencies: </b>
+                  {Object.values(country.currencies)[0].name}
                 </li>
                 <li>
-                  <b>Languages: </b>
+                  <b>Languages: </b> {Object.values(country.languages)[0]}
                 </li>
               </ul>
             </CountryDataList>
-
-            <BorderCountryContainer>
-              <p>
-                <b>Border Countries:</b>
-              </p>
-              <ul>
-                {country.borders.map((countryBorder) => (
-                  <li>
-                    <Link to={`/country/${countryBorder}`}>{countryBorder}</Link>
-                  </li>
-                ))}
-              </ul>
-            </BorderCountryContainer>
+            {country.borders && (
+              <BorderCountryContainer>
+                <p>
+                  <b>Border Countries:</b>
+                </p>
+                <ul>
+                  {country.borders.map((countryBorder) => (
+                    <li>
+                      <Link to={`/country/${countryBorder}`}>
+                        {countryBorder}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </BorderCountryContainer>
+            )}
           </CountryDataContainer>
         </CountryWrapper>
       ))}

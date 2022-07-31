@@ -8,10 +8,10 @@ function Card({ cardData }) {
     <Container>
       <Link
         to={`country/${cardData.cca2}`}
-        title={`Ver mais informações sobre ${cardData.name.common}`}
+        title={`See more about ${cardData.name.common}`}
       >
         <header>
-          <img src={cardData.flags.svg} alt={`${cardData.name.common} flag`} />
+          <img src={cardData.flags.png} alt={`${cardData.name.common} flag`} />
         </header>
 
         <CardData>
