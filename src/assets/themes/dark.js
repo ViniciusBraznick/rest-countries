@@ -5,4 +5,5 @@ export default {
     backgroundHeader: "#2B3945",
     text: "#FFF",
   },
+	shadow: '#2B3945'
 };

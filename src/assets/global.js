@@ -10,11 +10,13 @@ export default createGlobalStyle`
 
 		body{
 			font-family: 'Nunito Sans', sans-serif;
+			background-color: ${({ theme }) => theme.colors.backgroundBody};
 		}
 
 		button, input{
 			cursor: pointer;
 			border-radius: 4px;
+			font-family: inherit;
 		}
 
 		ul{

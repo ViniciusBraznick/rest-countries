@@ -5,7 +5,6 @@ class HttpClient {
 
   async get(path) {
     const response = await fetch(`${this.baseURL}${path}`);
-
     return response.json();
   }
 }

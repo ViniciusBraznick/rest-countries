@@ -223,9 +223,8 @@ class countryService {
 		]
   }
 
-  async getCountryByCode(name) {
-    const country = await this.httpClient.get(name);
-
+  async getCountryByCode(code) {
+    const country = await this.httpClient.get(`alpha?codes=${code}`);
     return country;
   }
 }

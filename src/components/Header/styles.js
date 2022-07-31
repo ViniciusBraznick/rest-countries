@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.header`
   width: 100vw;
   height: 80px;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   background-color: ${({ theme }) => theme.colors.backgroundHeader};
 `;
 

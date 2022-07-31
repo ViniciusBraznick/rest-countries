@@ -3,7 +3,6 @@ import { Container, CardData, CountryName, DataList } from "./styles";
 import formatNumber from "../../utils/formatNumber";
 
 function Card({ cardData }) {
-  console.log(cardData);
   return (
     <Container>
       <a
@@ -20,8 +19,7 @@ function Card({ cardData }) {
           <DataList>
             <li>
               <p>
-                <b>Population:</b>{" "}
-                {formatNumber(cardData.population)}
+                <b>Population:</b> {formatNumber(cardData.population)}
               </p>
             </li>
             <li>
