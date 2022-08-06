@@ -10,7 +10,7 @@ export const Container = styled.div`
   }
 `;
 
-export const ButtonBack = styled.button`
+export const ButtonBack = styled.a`
   width: 140px;
   height: 40px;
   margin: 80px 0;
@@ -19,6 +19,7 @@ export const ButtonBack = styled.button`
   justify-content: center;
   gap: 8px;
   border: 0;
+  border-radius: 4px;
   color: ${({ theme }) => theme.colors.text};
   background-color: ${({ theme }) => theme.colors.backgroundHeader};
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
@@ -76,22 +77,23 @@ export const BorderCountryContainer = styled.div`
   flex-wrap: wrap;
   gap: 8px;
 
-	@media (max-width: 990px){
-		flex-direction: column;
-	}
+  @media (max-width: 990px) {
+    flex-direction: column;
+  }
 
   p {
-		min-width: 8em;
-		flex: .3;
+    min-width: 8em;
+    flex: 0.3;
   }
 
   ul {
     display: flex;
     gap: 8px;
-		flex: 1;
+    flex: 1;
     flex-wrap: wrap;
 
     li {
+			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
       a {
         color: ${({ theme }) => theme.colors.text};
         padding: 2px 12px;

@@ -80,7 +80,7 @@ export default function Home() {
       <Loader isLoading={isLoading} />
       <FilterContainer>
         <InputSearch>
-          <label htmlFor="search" aria-label="Search">
+          <label htmlFor="search" aria-label="Search country">
             <FontAwesomeIcon icon={faSearch} />
           </label>
           <input
@@ -105,8 +105,8 @@ export default function Home() {
       </FilterContainer>
 
       <CardContainer>
-        {filteredContacts.map((country) => (
-          <Card cardData={country} />
+        {filteredContacts.map((country, index) => (
+          <Card key={index} cardData={country} />
         ))}
       </CardContainer>
 

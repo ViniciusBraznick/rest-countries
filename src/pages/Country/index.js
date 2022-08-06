@@ -14,7 +14,7 @@ import {
   BorderCountryContainer,
 } from "./styles";
 
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Loader from "../../components/Loader";
 
 export default function Country() {
@@ -44,7 +44,7 @@ export default function Country() {
   return (
     <Container>
       <Loader isLoading={isLoading} />
-      <ButtonBack>
+      <ButtonBack href="/">
         <FontAwesomeIcon icon={faArrowLeft} />
         Back
       </ButtonBack>
@@ -101,10 +101,8 @@ export default function Country() {
                 </p>
                 <ul>
                   {country.borders.map((countryBorder) => (
-                    <li>
-                      <Link to={`/country/${countryBorder}`}>
-                        {countryBorder}
-                      </Link>
+                    <li key={countryBorder}>
+                      <a href={`/country/${countryBorder}`}>{countryBorder}</a>
                     </li>
                   ))}
                 </ul>

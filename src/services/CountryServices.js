@@ -1,8 +1,5 @@
 import HttpClient from "./utils/HttpClient";
 
-//import { mockCountry } from "./mocks/countryMock";
-//import { detailsCountryMock } from "./mocks/detailsCountryMock";
-
 class countryService {
   constructor() {
     this.httpClient = new HttpClient("https://restcountries.com/v3.1/");

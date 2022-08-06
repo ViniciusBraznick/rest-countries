@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 264px;
+  max-width: 265px;
   border-radius: 6px;
   padding-bottom: 46px;
   background-color: ${({ theme }) => theme.colors.backgroundHeader};

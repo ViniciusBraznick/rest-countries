@@ -13,9 +13,16 @@ export const FilterContainer = styled.section`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  @media (max-width: 990px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
 `;
 
 export const InputSearch = styled.div`
+  width: 100%;
   flex: 1;
   display: flex;
   gap: 8px;
@@ -24,7 +31,6 @@ export const InputSearch = styled.div`
   input {
     width: 100%;
     height: 56px;
-    max-width: 480px;
     padding-left: 74px;
     border: 0;
     font-size: 1rem;
@@ -34,6 +40,10 @@ export const InputSearch = styled.div`
 
     &::placeholder {
       color: ${({ theme }) => theme.colors.text};
+    }
+
+    @media (min-width: 990px) {
+      max-width: 480px;
     }
   }
 
@@ -68,8 +78,8 @@ export const SelectSearch = styled.div`
 export const CardContainer = styled.section`
   margin-top: 50px;
   display: grid;
-  grid-gap: 72px;
-  grid-template-columns: repeat(auto-fit, 264px);
+  grid-gap: 65px;
+  grid-template-columns: repeat(auto-fit, 270px);
 
   @media (max-width: 600px) {
     justify-content: center;
